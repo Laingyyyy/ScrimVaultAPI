@@ -1,0 +1,6 @@
+@ScrimVaultAPI_HostAddress = http://localhost:5228
+
+GET {{ScrimVaultAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
