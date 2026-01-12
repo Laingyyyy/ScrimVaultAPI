@@ -1,6 +1,38 @@
 @ScrimVaultAPI_HostAddress = http://localhost:5228
 
-GET {{ScrimVaultAPI_HostAddress}}/weatherforecast/
+GET {{ScrimVaultAPI_HostAddress}}/api/Team
 Accept: application/json
 
 ###
+GET {{ScrimVaultAPI_HostAddress}}/api/Team/2
+Accept: application/json
+
+###
+POST {{ScrimVaultAPI_HostAddress}}/api/Team
+Content-Type: application/json
+
+{
+  "teamId": 3,
+  "name": "Team 3",
+  "ownerUserId": 3,
+  "id": 3,
+  "createdAt": "2026-01-12T14:23:57.2625427+00:00",
+  "updatedAt": "2026-01-12T14:23:57.2625431+00:00"
+}
+
+###
+PUT {{ScrimVaultAPI_HostAddress}}/api/Team/2
+Content-Type: application/json
+
+{
+  "teamId": 2,
+  "name": "Team 2",
+  "ownerUserId": 6,
+  "id": 2,
+  "createdAt": "2026-01-12T14:23:57.2625427+00:00",
+  "updatedAt": "2026-01-12T14:23:57.2625431+00:00"
+}
+
+###
+DELETE {{ScrimVaultAPI_HostAddress}}/api/Team/2
+Accept: application/json
