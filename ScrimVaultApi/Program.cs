@@ -1,3 +1,5 @@
+using Persistence.Services;
+
 namespace ScrimVaultApi;
 
 public class Program
@@ -10,6 +12,9 @@ public class Program
         builder.Services.AddAuthorization();
 
         builder.Services.AddControllers();
+        
+        // adding persistence services to container
+        builder.Services.AddPersistenceServices(builder.Configuration);
 
         var app = builder.Build();
 
