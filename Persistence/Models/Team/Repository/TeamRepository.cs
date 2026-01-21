@@ -66,11 +66,11 @@ public class TeamRepository : ITeamRepository
     /// Gets the <see cref="TeamEntity"/> based on the team's name
     /// </summary>
     /// <param name="name">The name of the team</param>
-    /// <returns></returns>
-    /// <exception cref="TeamNotFound">Fires when there is no teams that have the name that matches <param name="name">Team.Name</param></exception>
+    /// <returns>The <see cref="TeamEntity"/> found</returns>
+    /// <exception cref="TeamNotFound">Fires when there is no teams that have the name that matches the <param name="name">Team.Name</param></exception>
     public async Task<TeamEntity> GetTeamByName(string name)
     {
-        return await _db.Teams.FirstOrDefaultAsync(x => EF.Functions.Like(x.Name, name)).ConfigureAwait(false)
+        return await _db.Teams.FirstOrDefaultAsync(x => EF.Functions.ILike(x.Name, name)).ConfigureAwait(false)
                ?? throw new TeamNotFound(name);
     }
 }
