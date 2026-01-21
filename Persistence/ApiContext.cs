@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Persistence.Models;
+using Persistence.Models.Team;
 
 namespace Persistence;
 
 public class ApiContext : DbContext
 {
+    public DbSet<TeamEntity> Teams { get; set; }
+    
     public ApiContext(DbContextOptions<ApiContext> options)
         : base(options)
     {
